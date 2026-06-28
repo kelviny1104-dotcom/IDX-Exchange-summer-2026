@@ -1,0 +1,10 @@
+# ignore all raw data 
+data/
+*.csv
+*.zip
+
+# ignore enviorment data
+idx_env/
+
+.ipynb_checkpoints/
+__pycache__/
