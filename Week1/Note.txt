@@ -1,0 +1,41 @@
+# Week 1: Project Orientation & Data Architecture
+
+## 1. Executive Summary
+This project aims to build a robust property valuation engine for California residential homes. Unlike generic price estimation, we focus on **Single Family Residences** to reduce noise and increase model precision. All data is sourced from CRMLS via the Trestle API.
+
+## 2. Engineering Constraint: Data Integrity
+* **Leakage Prevention**: Per technical directive from Aidan Nguyen (06/19/2026), `ListPrice` and `OriginalListPrice` are strictly blacklisted to avoid model leakage.
+* **Scope**: Analysis is exclusively restricted to `Residential` property types with `SingleFamilyResidence` subtypes.
+
+## 3. Data Dictionary: Analytical Taxonomy
+I have categorized the features based on how they contribute to the machine learning model's predictive power.
+
+### A. Core Determinants (Primary Features)
+*These are the "Size & Capacity" drivers that typically show the highest correlation with `ClosePrice`.*
+* **`ClosePrice` [Target]**: The final ground truth for the model.
+* **`LivingArea` / `BuildingAreaTotal`**: Critical volumetric features. 
+* **`BedroomsTotal` / `BathroomsTotalInteger`**: Defines the functional capacity of the unit.
+* **`LotSizeSquareFeet` / `LotSizeAcres`**: Represents the land-based value component.
+
+### B. Positional & Contextual Intelligence
+*These columns provide the "Where" factor, essential for regional price adjustments.*
+* **`Latitude` / `Longitude`**: High-resolution spatial features for mapping.
+* **`PostalCode` / `City`**: Essential for neighborhood-level price segmentation.
+* **`Elementary/Middle/HighSchoolDistrict`**: Serves as a proxy for socioeconomic positioning and family appeal.
+
+### C. Quality & Amenity Premium (Feature Engineering Targets)
+*These represent binary attributes that we will transform into "Premium" binary flags during preprocessing.*
+* **Utility Features**: `PoolPrivateYN`, `ViewYN`, `WaterfrontYN`, `BasementYN`.
+* **Structural Features**: `Stories`, `NewConstructionYN`, `AttachedGarageYN`.
+
+### D. Temporal & Financial Metadata (System/Audit)
+*These provide the timeline of the transaction but need normalization.*
+* **Timing**: `CloseDate`, `DaysOnMarket`, `ListingContractDate`.
+* **Fiscal**: `TaxAnnualAmount`, `AssociationFee`. 
+
+---
+
+## 4. Engineering Roadmap for Week 2
+1. **Cleaning**: Handle `NaN` values, specifically focusing on `LotSize` and `TaxAnnualAmount` imputation.
+2. **Feature Engineering**: Transform "YN" columns into boolean/integer (0/1) encoders.
+3. **Exploratory Analysis**: Visualize the `ClosePrice` distribution to identify outliers (e.g., luxury properties vs. distressed sales).
