@@ -8,3 +8,6 @@ idx_env/
 
 .ipynb_checkpoints/
 __pycache__/
+
+# allow Week 3 deliverable CSV
+!Week3/cleaned_model_data.csv
