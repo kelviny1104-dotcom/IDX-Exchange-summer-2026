@@ -11,3 +11,4 @@ __pycache__/
 
 # allow Week 3 deliverable CSV
 !Week3/cleaned_model_data.csv
+!Week3\model_data_knn_before_encoding.csv
