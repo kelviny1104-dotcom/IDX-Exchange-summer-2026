@@ -2,6 +2,7 @@
 data/
 *.csv
 *.zip
+*.geojson
 
 # ignore enviorment data
 idx_env/
