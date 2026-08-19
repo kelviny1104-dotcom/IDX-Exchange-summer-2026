@@ -1,9 +1,0 @@
-evaluation_level,segment,property_count,r2,mae,rmse,mape,mdape,notes
-Overall,All June 2026 Properties,12857,0.810528039932251,224476.15625,668790.5316076177,0.24078136682510376,0.11295421421527863,Official full June 2026 test set
-Sensitivity,Exclude Lowest 1% of Close Prices,12728,,,,0.15532660484313965,0.11186457425355911,Supplementary sensitivity analysis only; not used as the official test result
-Price Band,Under $500K,1818,,88768.1328125,,0.8105125427246094,0.1428004652261734,Grouped by actual June 2026 ClosePrice
-Price Band,$500K-$750K,2747,,92096.9296875,,0.14780306816101074,0.10519194602966309,Grouped by actual June 2026 ClosePrice
-Price Band,$750K-$1M,2583,,117329.71875,,0.1334414780139923,0.09679155051708221,Grouped by actual June 2026 ClosePrice
-Price Band,$1M-$1.5M,2564,,166595.734375,,0.13388486206531525,0.10330779105424881,Grouped by actual June 2026 ClosePrice
-Price Band,$1.5M-$2.5M,2005,,287594.59375,,0.15103572607040405,0.12120094150304794,Grouped by actual June 2026 ClosePrice
-Price Band,Above $2.5M,1140,,1021822.625,,0.19773027300834656,0.1553245484828949,Grouped by actual June 2026 ClosePrice
