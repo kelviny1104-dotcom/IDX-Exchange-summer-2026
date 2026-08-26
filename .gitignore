@@ -12,4 +12,4 @@ __pycache__/
 
 # allow Week 3 deliverable CSV
 !Week3/model_data_knn_before_encoding.csv
-!Week7/metrics_summary.csv
+!Week7/metrics_summary.csv~$*
